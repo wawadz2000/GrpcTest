@@ -1,0 +1,32 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package ressources.java.dz.example.grpc;
+
+service Operations{
+    rpc add(Operands) returns (Result);
+    rpc substract(Operands) returns (Result);
+    rpc multip(Operands) returns (Result);
+    rpc divide(Operands) returns (Result);
+    rpc distace(Points) returns (Result);
+}
+
+message Operands {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message Result {
+    float res = 1;
+ 
+}
+
+message Points{
+    Point p1 = 1;
+    Point p2 = 2;
+
+}
+
+message Point{
+    int32 x = 1; 
+    int32 y = 2;
+}
